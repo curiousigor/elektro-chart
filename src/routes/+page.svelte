@@ -12,9 +12,13 @@
 	let price_blok_5 = 0.0;
 </script>
 
+<svelte:head>
+	<title>Cena električne energije po urah v dnevu</title>
+</svelte:head>
+
 <div class="print">
 	<div id="content" class="pb-8">
-		<h1 class=" text-xl font-semibold">Cena elektrike po urah v dnevu</h1>
+		<h1 class=" text-xl font-semibold">Cena električne energije po urah v dnevu</h1>
 
 		<h2 class="font-medium pt-4">November, December, Januar, Februar</h2>
 		<h3 class="text-sm font-medium pt-2 pb-2">Delovni dan</h3>
@@ -198,7 +202,7 @@
 				<div class="flex-col items-center p-0 m-0 font-medium">
 					Blok 1
 					<span class="value">
-						<input type="number" step=".01" bind:value={price_blok_1} class="w-10 p-0 m-0" />€/kW
+						<input type="number" step=".01" bind:value={price_blok_1} />€/kW
 					</span>
 				</div>
 			</div>
@@ -207,7 +211,7 @@
 				<div class="flex-col items-center p-0 m-0 font-medium">
 					Blok 2
 					<span class="value">
-						<input type="number" step=".01" bind:value={price_blok_2} class="w-10" />€/kW
+						<input type="number" step=".01" bind:value={price_blok_2} />€/kW
 					</span>
 				</div>
 			</div>
@@ -216,7 +220,7 @@
 				<div class="flex-col items-center p-0 m-0 font-medium">
 					Blok 3
 					<span class="value">
-						<input type="number" step=".01" bind:value={price_blok_3} class="w-10" />€/kW
+						<input type="number" step=".01" bind:value={price_blok_3} />€/kW
 					</span>
 				</div>
 			</div>
@@ -225,7 +229,7 @@
 				<div class="flex-col items-center p-0 m-0 font-medium">
 					Blok 4
 					<span class="value">
-						<input type="number" step=".01" bind:value={price_blok_4} class="w-10" />€/kW
+						<input type="number" step=".01" bind:value={price_blok_4} />€/kW
 					</span>
 				</div>
 			</div>
@@ -234,7 +238,7 @@
 				<div class="flex-col items-center p-0 m-0 font-medium">
 					Blok 5
 					<span class="value">
-						<input type="number" step=".01" bind:value={price_blok_5} class="w-10" />€/kW
+						<input type="number" step=".01" bind:value={price_blok_5} />€/kW
 					</span>
 				</div>
 			</div>
@@ -242,15 +246,19 @@
 	</div>
 	<div class="explanation pb-8">
 		<p>
-			Informacije o cenah elektrike za posamiċni blok na vaši lokaciji lahko pridobite od vašega
-			operaterja električne energije ali na <a
+			Cene na tej spletni strani so informativnega značaja in ne odražajo cene, katere zaračunava
+			vaš ponudnik eletrične energije.
+		</p>
+		<p>
+			Informacije o cenah električne energije za posamični blok na vaši lokaciji lahko pridobite od
+			vašega ponudnika električne energije ali na <a
 				class="border-b border-blue-300"
 				href="https://mojelektro.si/">mojelektro.si</a
 			>.
 		</p>
 		<p>
-			Cene blokov na tej spletni strani lahko spremenite s klikom na ceno bloka v legendi pod
-			grafičnim prikazom dnevov. Spremembe bodo vidne tudi v PDF.
+			S klikom na ceno bloka v legendi pod grafičnim prikazom dnevov lahko cene blokov na tej
+			spletni strani spremenite. Spremembe bodo vidne tudi v PDF.
 		</p>
 	</div>
 	<button on:click={printPDF} class="py-2 px-4 bg-blue-500 text-white rounded-md">Shrani PDF</button
@@ -295,12 +303,16 @@
 	}
 
 	input {
-		@apply border rounded-sm border-slate-700;
+		@apply border rounded-sm border-slate-700 text-base w-14 relative;
 	}
 
 	@media print {
 		@page {
 			size: landscape;
+		}
+
+		input {
+			@apply border-none text-xs w-10;
 		}
 
 		button,
