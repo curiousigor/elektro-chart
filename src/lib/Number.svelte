@@ -1,10 +1,12 @@
 <script>
-	export let number;
+	export let number = 0;
 
-	$: formattedNumber = number.toLocaleString('de-DE', {
-		notation: 'standard',
-		compactDisplay: 'short'
-	});
+	$: formattedNumber = number
+		? number.toLocaleString('de-DE', {
+				notation: 'standard',
+				compactDisplay: 'short'
+			})
+		: 0;
 </script>
 
 <span>{formattedNumber}</span>

@@ -249,8 +249,8 @@
 			>.
 		</p>
 		<p>
-			Cene blokov na spletni strani lahko spremenite s klikom na ceno bloka v legendi pod grafičnim
-			prikazom dnevov.
+			Cene blokov na tej spletni strani lahko spremenite s klikom na ceno bloka v legendi pod
+			grafičnim prikazom dnevov. Spremembe bodo vidne tudi v PDF.
 		</p>
 	</div>
 	<button on:click={printPDF} class="py-2 px-4 bg-blue-500 text-white rounded-md">Shrani PDF</button
@@ -292,6 +292,10 @@
 
 	.print {
 		@apply max-w-screen-2xl mx-auto px-2 py-16;
+	}
+
+	input {
+		@apply border rounded-sm border-slate-700;
 	}
 
 	@media print {
