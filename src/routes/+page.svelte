@@ -240,6 +240,16 @@
 			</div>
 		</div>
 	</div>
+	<div class="explanation pb-8">
+		<p>
+			Informacije o cenah elektrike na vaši lokaciji lahko pridobite od vašega operaterja električne
+			energije ali na <a href="https://mojelektro.si/login">mojelektro.si</a>.
+		</p>
+		<p>
+			Cene blokov na spletni strani lahko spremenite s klikom na ceno bloka v legendi pod grafičnim
+			prikazom dnevov.
+		</p>
+	</div>
 	<button on:click={printPDF} class="py-2 px-4 bg-blue-500 text-white rounded-md">Shrani PDF</button
 	>
 </div>
@@ -286,7 +296,8 @@
 			size: landscape;
 		}
 
-		button {
+		button,
+		.explanation {
 			display: none;
 		}
 
