@@ -242,8 +242,11 @@
 	</div>
 	<div class="explanation pb-8">
 		<p>
-			Informacije o cenah elektrike na vaši lokaciji lahko pridobite od vašega operaterja električne
-			energije ali na <a href="https://mojelektro.si/login">mojelektro.si</a>.
+			Informacije o cenah elektrike za posamiċni blok na vaši lokaciji lahko pridobite od vašega
+			operaterja električne energije ali na <a
+				class="border-b border-blue-300"
+				href="https://mojelektro.si/">mojelektro.si</a
+			>.
 		</p>
 		<p>
 			Cene blokov na spletni strani lahko spremenite s klikom na ceno bloka v legendi pod grafičnim
