@@ -1,38 +1,37 @@
-# create-svelte
+# Elektro chart
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Preprost interaktivni prikaz časovnih blokov in njihovih cen skozi dan. Urnik je razdeljen po sezonah ter na delovne in dela proste dni, tako da lahko na enem mestu primerjate razporeditev blokov za vseh 24 ur.
 
-## Creating a project
+**Aplikacija:** [elektrika-blok-cene.vercel.app](https://elektrika-blok-cene.vercel.app/)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Kaj omogoča
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- prikaz urnika blokov po urah za zimsko in poletno sezono;
+- ločen prikaz delovnih dni in dela prostih dni;
+- urejanje prikazanih cen za bloke 1–5;
+- tiskanje oziroma shranjevanje prikaza v PDF z gumbom **Shrani PDF**.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Cene so v aplikaciji začetne informativne vrednosti, ki jih lahko prilagodite. Prikaz ni uradni obračun in ne predstavlja nujno cene, ki vam jo zaračuna vaš dobavitelj. Za podatke, veljavne za vašo lokacijo, se obrnite na dobavitelja ali obiščite [mojelektro.si](https://mojelektro.si/).
 
-## Developing
+## Lokalni zagon
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
+Potrebujete Node.js in pnpm. Namestite odvisnosti in zaženite razvojni strežnik:
 
 ```bash
-npm run build
+pnpm install
+pnpm dev
 ```
 
-You can preview the production build with `npm run preview`.
+Zaženite `pnpm dev -- --open`, če želite aplikacijo po zagonu odpreti v brskalniku.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Ukazi
+
+```bash
+pnpm dev       # razvojni strežnik
+pnpm build     # produkcijska gradnja
+pnpm preview   # predogled produkcijske gradnje
+pnpm lint      # preverjanje oblikovanja s Prettierjem
+pnpm format    # samodejno oblikovanje datotek
+```
+
+Projekt uporablja SvelteKit, Svelte, Vite in Tailwind CSS. Za produkcijsko objavo lahko glede na izbrano okolje potrebujete ustrezen SvelteKit adapter.
